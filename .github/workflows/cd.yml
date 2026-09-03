@@ -55,7 +55,7 @@ jobs:
       - name: Build, Tag, and Push Image to Amazon ECR
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: backend-repo
+          REPOSITORY: backend
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ./starter/backend
@@ -77,9 +77,9 @@ jobs:
           aws-region: us-east-1
 
       - name: Update Kubeconfig
-        run: aws eks update-kubeconfig --name your-cluster-name --region us-east-1
+        run: aws eks update-kubeconfig --name cluster --region us-east-1
 
       - name: Deploy to Kubernetes
         run: |
           # Update manifest or apply configurations using the commit SHA tag
-          kubectl set image deployment/backend-deployment backend=$REGISTRY/backend-repo:${{ github.sha }} || kubectl apply -f setup/kubernetes/
+          kubectl set image deployment/backend-deployment backend=$REGISTRY/backend:${{ github.sha }} || kubectl apply -f setup/kubernetes/
