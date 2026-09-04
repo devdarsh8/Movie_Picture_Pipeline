@@ -4,6 +4,11 @@
 
 [Open Movie Picture Pipeline Frontend](http://ac085c2e03c054832ad31f09181a05eb-1287782807.us-east-1.elb.amazonaws.com)
 
+## 🔗 Deployed Applications
+
+- [Frontend Application](http://ac085c2e03c054832ad31f09181a05eb-1287782807.us-east-1.elb.amazonaws.com)
+- [Backend Movies API](http://a67c3d33a398b4752a62af054c1b4236-1062123559.us-east-1.elb.amazonaws.com/movies)
+
 ## Project Overview
 
 The Movie Picture Pipeline is a web application consisting of:
