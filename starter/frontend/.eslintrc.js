@@ -1,4 +1,3 @@
-```javascript
 module.exports = {
   ignorePatterns: ['build/', 'dist/', 'node_modules/'],
   extends: ['eslint:recommended', 'plugin:react/recommended'],
@@ -36,4 +35,4 @@ module.exports = {
     'react/jsx-uses-vars': 'warn',
   },
 };
-```
+
