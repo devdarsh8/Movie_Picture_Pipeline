@@ -43,25 +43,6 @@ The Movie Picture Pipeline is a web application consisting of:
 
 [Open Movies API](http://a67c3d33a398b4752a62af054c1b4236-1062123559.us-east-1.elb.amazonaws.com/movies)
 
-The API returns:
-
-```json
-{
-  "movies": [
-    {
-      "id": "123",
-      "title": "Top Gun: Maverick"
-    },
-    {
-      "id": "456",
-      "title": "Sonic the Hedgehog"
-    },
-    {
-      "id": "789",
-      "title": "A Quiet Place"
-    }
-  ]
-}
 ## Movie Picture Pipeline
 
 You've been brought on as the DevOps resource for a development team that manages a web application that is a catalog of Movie Picture movies. They're in dire need of automating their development workflows in hopes of accelerating their release cycle. They'd like to use Github Actions to automate testing, building and deploying their applications to an existing Kubernetes cluster.
