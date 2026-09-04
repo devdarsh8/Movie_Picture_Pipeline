@@ -97,6 +97,11 @@ jobs:
           docker build --build-arg REACT_APP_MOVIE_API_URL=$REACT_APP_MOVIE_API_URL -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
+      - name: Check AWS identity and EKS cluster
+        run: |
+          aws sts get-caller-identity
+          aws eks describe-cluster --name cluster --region us-east-1
+
       - name: Update Kubeconfig
         run: aws eks update-kubeconfig --name cluster --region us-east-1
 
@@ -109,4 +114,5 @@ jobs:
         run: |
           kustomize edit set image frontend=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           kustomize build | kubectl apply -f -
+
 # Frontend CD workflow
