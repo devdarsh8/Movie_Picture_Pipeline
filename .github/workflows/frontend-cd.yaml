@@ -92,7 +92,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: frontend
           IMAGE_TAG: ${{ github.sha }}
-          REACT_APP_MOVIE_API_URL: http://a123cf26ff40649a8b3a89aaf5a3a873-216323028.us-east-1.elb.amazonaws.com
+          REACT_APP_MOVIE_API_URL: http://a67c3d33a398b4752a62af054c1b4236-1062123559.us-east-1.elb.amazonaws.com
         run: |
           docker build --build-arg REACT_APP_MOVIE_API_URL=$REACT_APP_MOVIE_API_URL -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
